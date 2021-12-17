@@ -41,17 +41,11 @@ namespace WormsWorld.WorldSimulator
             {
                 name = _nameGenerator.GenerateName();
             }
-
-            // if (IsCellFree(new Cell(x, y)))
-            // {
-                var worm = new Worm(this, _wormMover, name, x, y);
-                Worms.Add(worm);
-                return worm;
-            // }
-
-            
+            var worm = new Worm(this, _wormMover, name, x, y);
+            Worms.Add(worm);
+            return worm;
         }
-        
+
         private bool IsWormNameExist(string name)
         {
             return Worms.Any(worm => worm.Name.Equals(name));
